@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kelati — Media Kit 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@1,700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --ink:#0d0d0d;
+  --paper:#f4f0e8;
+  --red:#d0122b;
+  --red2:#9a0d1f;
+  --gold:#e8a020;
+  --smoke:rgba(13,13,13,0.06);
+}
+body{background:var(--ink);color:var(--paper);font-family:'Space Mono',monospace;overflow-x:hidden;cursor:crosshair}
+body::after{content:'';position:fixed;inset:0;z-index:9000;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.04;mix-blend-mode:screen}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--ink)}
+::-webkit-scrollbar-thumb{background:var(--red)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(244,240,232,.07);background:rgba(13,13,13,.75);backdrop-filter:blur(14px)}
+.nav-k{font-family:'Bebas Neue',sans-serif;font-size:1.35rem;letter-spacing:.15em;color:var(--paper);text-decoration:none}
+.nav-k em{color:var(--red);font-style:normal}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,240,232,.4);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--paper)}
+.nav-btn{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;background:var(--red);color:var(--paper);border:none;padding:.55rem 1.1rem;cursor:crosshair;text-decoration:none;transition:background .2s}
+.nav-btn:hover{background:var(--red2)}
+
+/* HERO */
+.hero{min-height:100vh;padding:7rem 2rem 4rem;display:grid;grid-template-columns:1fr 420px;gap:3rem;align-items:center;position:relative;overflow:hidden}
+.hero-ghost{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',sans-serif;font-size:clamp(140px,24vw,360px);color:rgba(244,240,232,.018);white-space:nowrap;pointer-events:none;user-select:none;letter-spacing:-.03em}
+.hero-left{position:relative;z-index:2}
+.pill{display:inline-flex;align-items:center;gap:.5rem;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;border:1px solid rgba(208,18,43,.5);color:var(--red);padding:.28rem .9rem;margin-bottom:1.6rem;opacity:0;animation:up .5s .1s forwards}
+.pill-dot{width:6px;height:6px;background:var(--red);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(72px,10vw,148px);line-height:.93;letter-spacing:-.01em;margin-bottom:.4rem;opacity:0;animation:up .7s .25s forwards}
+h1 .red{color:var(--red)}
+h1 .italic{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.72em;color:var(--gold);display:block;line-height:1.1}
+.hero-sub{font-size:.75rem;line-height:1.8;color:rgba(244,240,232,.55);max-width:440px;margin:.8rem 0 2.2rem;opacity:0;animation:up .7s .45s forwards}
+.hero-btns{display:flex;gap:.9rem;flex-wrap:wrap;opacity:0;animation:up .7s .6s forwards}
+.btn-red{font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;background:var(--red);color:var(--paper);border:none;padding:.8rem 1.8rem;cursor:crosshair;text-decoration:none;transition:background .2s,transform .15s;display:inline-block}
+.btn-red:hover{background:var(--red2);transform:translateY(-2px)}
+.btn-ghost{font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;background:transparent;color:var(--paper);border:1px solid rgba(244,240,232,.25);padding:.8rem 1.8rem;cursor:crosshair;text-decoration:none;transition:border-color .2s,transform .15s;display:inline-block}
+.btn-ghost:hover{border-color:var(--paper);transform:translateY(-2px)}
+
+/* STAT STACK */
+.hero-right{position:relative;z-index:2;opacity:0;animation:up .8s .5s forwards}
+.stat-stack{display:flex;flex-direction:column;gap:.8rem}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.stat{background:rgba(244,240,232,.04);border:1px solid rgba(244,240,232,.07);padding:1.4rem 1.6rem;position:relative;transition:background .3s,transform .2s;overflow:hidden}
+.stat::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--red)}
+.stat:hover{background:rgba(208,18,43,.07);transform:translateX(-4px)}
+.stat-plat{font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem}
+.stat-n{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;line-height:1;color:var(--paper);letter-spacing:.03em}
+.stat-l{font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,240,232,.35);margin-top:.25rem}
+.stat-wide{grid-column:span 2;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 1.6rem}
+.stat-wide::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold)}
+.stat-wide-num{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--gold)}
+.stat-wide-label{font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,240,232,.35);text-align:right}
+
+/* MARQUEE */
+.mq{border-top:1px solid rgba(244,240,232,.07);border-bottom:1px solid rgba(244,240,232,.07);background:var(--red);padding:.7rem 0;overflow:hidden}
+.mq-track{display:flex;gap:2.5rem;white-space:nowrap;animation:mqroll 20s linear infinite}
+.mq-item{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.14em;color:var(--paper);flex-shrink:0}
+.mq-dot{color:rgba(244,240,232,.35)}
+@keyframes mqroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* SECTIONS */
+section{padding:5.5rem 2rem}
+.eyebrow{font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:.7rem;margin-bottom:.9rem}
+.eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--red)}
+.sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(38px,5.5vw,76px);line-height:.97;letter-spacing:.02em;margin-bottom:2.5rem}
+.divider{width:100%;height:1px;background:rgba(244,240,232,.06)}
+.inner{max-width:1160px;margin:0 auto}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.about-copy{font-size:.78rem;line-height:1.9;color:rgba(244,240,232,.6)}
+.about-copy p+p{margin-top:1.1rem}
+.about-copy strong{color:var(--paper);font-weight:700}
+.id-card{background:rgba(244,240,232,.04);border:1px solid rgba(244,240,232,.09);padding:2.2rem}
+.id-name{font-family:'Bebas Neue',sans-serif;font-size:3.2rem;line-height:.95;letter-spacing:.04em;margin-bottom:.3rem}
+.id-handle{font-size:.62rem;letter-spacing:.22em;color:var(--red);text-transform:uppercase;margin-bottom:1.8rem}
+.id-location{font-size:.65rem;letter-spacing:.15em;color:rgba(244,240,232,.35);text-transform:uppercase;margin-bottom:1.6rem;display:flex;align-items:center;gap:.5rem}
+.id-location::before{content:'📍';font-size:.85rem}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.8rem}
+.tag{font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;padding:.28rem .75rem;border:1px solid rgba(244,240,232,.18);color:rgba(244,240,232,.45);transition:all .2s}
+.tag.hot{border-color:var(--red);background:var(--red);color:var(--paper)}
+.tag:not(.hot):hover{border-color:rgba(244,240,232,.4);color:var(--paper)}
+.niches{display:flex;flex-direction:column;gap:.5rem}
+.niche-row{display:flex;align-items:center;gap:.8rem;font-size:.62rem;letter-spacing:.08em;color:rgba(244,240,232,.5)}
+.niche-row::before{content:'';display:block;width:6px;height:6px;background:var(--red);flex-shrink:0}
+
+/* CONTENT */
+.content-section{background:rgba(244,240,232,.02)}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(244,240,232,.07);margin-top:2.5rem}
+.pillar{background:var(--ink);padding:2.2rem 1.8rem;position:relative;overflow:hidden;transition:background .3s}
+.pillar::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--red);transform:scaleX(0);transition:transform .3s;transform-origin:left}
+.pillar:hover{background:rgba(208,18,43,.06)}
+.pillar:hover::after{transform:scaleX(1)}
+.pillar-icon{font-size:1.7rem;margin-bottom:1rem;display:block}
+.pillar-type{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.04em;color:var(--paper);margin-bottom:.5rem}
+.pillar-desc{font-size:.68rem;line-height:1.7;color:rgba(244,240,232,.42)}
+.pillar-tag{display:inline-block;font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;background:rgba(208,18,43,.15);color:var(--red);padding:.2rem .6rem;margin-top:.8rem;border:1px solid rgba(208,18,43,.25)}
+
+/* AUDIENCE */
+.aud-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:4rem;align-items:start;margin-top:2.5rem}
+.bar-section h3{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.08em;color:rgba(244,240,232,.35);margin-bottom:1.2rem}
+.bar-row{display:flex;align-items:center;gap:1.2rem;margin-bottom:1.3rem}
+.bar-label{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,240,232,.38);width:70px;flex-shrink:0}
+.bar-track{flex:1;height:2px;background:rgba(244,240,232,.07)}
+.bar-fill{height:100%;background:var(--red)}
+.bar-pct{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--paper);width:44px;text-align:right;flex-shrink:0}
+.geo-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.geo{border:1px solid rgba(244,240,232,.07);padding:1.3rem 1.5rem;transition:border-color .3s}
+.geo:hover{border-color:rgba(208,18,43,.35)}
+.geo-city{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.04em;color:var(--paper)}
+.geo-pct{font-size:.58rem;letter-spacing:.18em;color:var(--red);text-transform:uppercase;margin-top:.2rem}
+.geo-wide{grid-column:span 2}
+
+/* NICHES SECTION */
+.niche-section{background:rgba(244,240,232,.02)}
+.niche-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(244,240,232,.07);margin-top:2.5rem}
+.niche-card{background:var(--ink);padding:2rem 1.5rem;transition:background .3s;text-align:center}
+.niche-card:hover{background:rgba(208,18,43,.06)}
+.niche-emoji{font-size:2rem;display:block;margin-bottom:.9rem}
+.niche-name{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;letter-spacing:.06em;color:var(--paper);margin-bottom:.5rem}
+.niche-note{font-size:.6rem;line-height:1.6;color:rgba(244,240,232,.38)}
+
+/* WORK TOGETHER */
+.work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(244,240,232,.07);margin-top:2.5rem}
+.work-card{background:var(--ink);padding:1.8rem 1.6rem;transition:background .3s}
+.work-card:hover{background:rgba(208,18,43,.06)}
+.work-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:rgba(208,18,43,.18);line-height:1;margin-bottom:.4rem}
+.work-name{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.04em;color:var(--paper);margin-bottom:.7rem}
+.work-desc{font-size:.64rem;line-height:1.7;color:rgba(244,240,232,.38)}
+
+/* FEATURED */
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(244,240,232,.07);margin-top:2.5rem}
+.feat-card{background:var(--ink);padding:2rem;display:flex;gap:1.2rem;align-items:flex-start;text-decoration:none;transition:background .3s}
+.feat-card:hover{background:rgba(208,18,43,.05)}
+.feat-thumb{width:64px;height:48px;background:rgba(208,18,43,.12);border:1px solid rgba(208,18,43,.2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.3rem}
+.feat-title{font-size:.74rem;line-height:1.5;color:var(--paper);margin-bottom:.45rem}
+.feat-meta{font-size:.55rem;letter-spacing:.14em;color:rgba(244,240,232,.28);text-transform:uppercase}
+.feat-views{color:var(--red)}
+
+/* CONTACT */
+.contact-inner{max-width:760px;margin:0 auto;text-align:center}
+.contact-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,9vw,110px);line-height:.93;letter-spacing:.01em;margin-bottom:1.4rem}
+.contact-title em{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold);display:block}
+.contact-sub{font-size:.75rem;line-height:1.8;color:rgba(244,240,232,.4);max-width:480px;margin:0 auto 2.5rem}
+.email-link{display:inline-block;font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.1em;color:var(--paper);text-decoration:none;border-bottom:2px solid var(--red);padding-bottom:2px;margin-bottom:2.8rem;transition:color .2s}
+.email-link:hover{color:var(--red)}
+.socials{display:flex;justify-content:center;gap:2.2rem}
+.soc{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,240,232,.3);text-decoration:none;transition:color .2s}
+.soc:hover{color:var(--paper)}
+
+/* FOOTER */
+footer{padding:1.8rem 2rem;border-top:1px solid rgba(244,240,232,.05);display:flex;justify-content:space-between;align-items:center}
+.foot-name{font-family:'Bebas Neue',sans-serif;font-size:.95rem;letter-spacing:.14em;color:rgba(244,240,232,.25)}
+.foot-name em{color:rgba(208,18,43,.5);font-style:normal}
+.foot-copy{font-size:.55rem;letter-spacing:.14em;color:rgba(244,240,232,.18);text-transform:uppercase}
+
+/* REVEAL */
+@keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.r{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.r.on{opacity:1;transform:translateY(0)}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;padding-top:6.5rem}
+  .hero-ghost{display:none}
+  .stat-row{grid-template-columns:1fr 1fr}
+  .about-grid{grid-template-columns:1fr;gap:2.5rem}
+  .pillars{grid-template-columns:1fr 1fr}
+  .aud-grid{grid-template-columns:1fr;gap:2.5rem}
+  .niche-grid{grid-template-columns:repeat(3,1fr)}
+  .work-grid{grid-template-columns:1fr 1fr}
+  .feat-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+@media(max-width:560px){
+  .pillars{grid-template-columns:1fr}
+  .niche-grid{grid-template-columns:1fr 1fr}
+  .work-grid{grid-template-columns:1fr}
+  .stat-row{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:.8rem;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-k" href="#"><em>K</em>ELATI</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#content">Content</a></li>
+    <li><a href="#audience">Audience</a></li>
+    <li><a href="#work">Partner</a></li>
+  </ul>
+  <a class="nav-btn" href="mailto:kelati@truecounterfeit.com">Work With Me</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-ghost">KELATI</div>
+  <div class="hero-left">
+    <span class="pill"><span class="pill-dot"></span>Available for partnerships · 2025</span>
+    <h1>
+      KELATI
+      <span class="red">.</span>
+      <span class="italic">Seattle's guide.</span>
+    </h1>
+    <p class="hero-sub">
+      Eats, beats & hidden gems — first-person content covering the moments, spots, and culture that define the PNW. No scripts. No polish. Just real Seattle.
+    </p>
+    <div class="hero-btns">
+      <a class="btn-red" href="mailto:kelati@truecounterfeit.com">Book a Partnership</a>
+      <a class="btn-ghost" href="#content">See the Work</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stat-stack">
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat-plat">TikTok</div>
+          <div class="stat-n">48K+</div>
+          <div class="stat-l">Followers</div>
+        </div>
+        <div class="stat">
+          <div class="stat-plat">YouTube</div>
+          <div class="stat-n">22K+</div>
+          <div class="stat-l">Subscribers</div>
+        </div>
+      </div>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat-plat">Instagram</div>
+          <div class="stat-n">9.4K</div>
+          <div class="stat-l">Followers</div>
+        </div>
+        <div class="stat">
+          <div class="stat-plat">Newsletter</div>
+          <div class="stat-n">3.2K</div>
+          <div class="stat-l">Subscribers</div>
+        </div>
+      </div>
+      <div class="stat-row">
+        <div class="stat stat-wide">
+          <div>
+            <div class="stat-plat" style="color:var(--gold)">Total Reach</div>
+            <div class="stat-wide-num">82K+</div>
+          </div>
+          <div class="stat-wide-label">Across all<br/>platforms</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mq">
+  <div class="mq-track">
+    <span class="mq-item">EVENTS</span><span class="mq-dot">✦</span>
+    <span class="mq-item">MUSIC & NIGHTLIFE</span><span class="mq-dot">✦</span>
+    <span class="mq-item">FOOD REVIEWS</span><span class="mq-dot">✦</span>
+    <span class="mq-item">SEAHAWKS</span><span class="mq-dot">✦</span>
+    <span class="mq-item">LIFESTYLE</span><span class="mq-dot">✦</span>
+    <span class="mq-item">HIDDEN GEMS</span><span class="mq-dot">✦</span>
+    <span class="mq-item">SEATTLE</span><span class="mq-dot">✦</span>
+    <span class="mq-item">EVENTS</span><span class="mq-dot">✦</span>
+    <span class="mq-item">MUSIC & NIGHTLIFE</span><span class="mq-dot">✦</span>
+    <span class="mq-item">FOOD REVIEWS</span><span class="mq-dot">✦</span>
+    <span class="mq-item">SEAHAWKS</span><span class="mq-dot">✦</span>
+    <span class="mq-item">LIFESTYLE</span><span class="mq-dot">✦</span>
+    <span class="mq-item">HIDDEN GEMS</span><span class="mq-dot">✦</span>
+    <span class="mq-item">SEATTLE</span><span class="mq-dot">✦</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="inner">
+    <div class="about-grid">
+      <div class="r">
+        <div class="eyebrow">Who I Am</div>
+        <h2 class="sec-title">KELATI</h2>
+        <div class="about-copy">
+          <p>I'm <strong>Kelati</strong> — a Seattle-based content creator covering the music, food, events, and culture that the Pacific Northwest actually lives in. I run <strong>@truecounterfeit</strong> across TikTok, YouTube, and Instagram.</p>
+          <p>My content is built on real experience: I'm at the tailgates, in the venues, at the restaurant on day one. I don't review what I'm told to — I cover what my city is actually talking about.</p>
+          <p>From <strong>Seahawks championship nights at Lumen Field</strong> to <strong>halal smash burgers in the ID</strong>, to local music shows and streetwear drops — this is the Seattle content gap I'm filling.</p>
+          <p>I'm growing fast and actively partnering with brands that genuinely fit my audience. If you're in events, food, music, sports, or lifestyle in the PNW — let's talk.</p>
+        </div>
+      </div>
+      <div class="r" style="transition-delay:.15s">
+        <div class="id-card">
+          <div class="id-name">KELATI</div>
+          <div class="id-handle">@truecounterfeit</div>
+          <div class="id-location">Seattle, Washington — PNW</div>
+          <div class="tag-cloud">
+            <span class="tag hot">Food</span>
+            <span class="tag hot">Music</span>
+            <span class="tag hot">Events</span>
+            <span class="tag hot">Sports</span>
+            <span class="tag hot">Lifestyle</span>
+            <span class="tag">PNW</span>
+            <span class="tag">Hidden Gems</span>
+            <span class="tag">Community</span>
+            <span class="tag">Nightlife</span>
+            <span class="tag">Culture</span>
+          </div>
+          <div class="niches">
+            <div class="niche-row">Active on TikTok · YouTube · Instagram · Newsletter</div>
+            <div class="niche-row">Growing creator · a few brand deals done</div>
+            <div class="niche-row">Primary audience: Seattle 18–34</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTENT PILLARS -->
+<section id="content" class="content-section">
+  <div class="inner">
+    <div class="r">
+      <div class="eyebrow">What I Make</div>
+      <h2 class="sec-title">CONTENT PILLARS</h2>
+    </div>
+    <div class="pillars">
+      <div class="pillar r" style="transition-delay:.05s">
+        <span class="pillar-icon">🎟️</span>
+        <div class="pillar-type">Events & Ticketing</div>
+        <p class="pillar-desc">On-the-ground coverage of Seattle's biggest nights — concerts, festivals, pop-ups, and cultural events. I'm there early, I stay late, and the content shows it.</p>
+        <span class="pillar-tag">Core niche</span>
+      </div>
+      <div class="pillar r" style="transition-delay:.1s">
+        <span class="pillar-icon">🎵</span>
+        <div class="pillar-type">Music & Nightlife</div>
+        <p class="pillar-desc">Venue walk-throughs, artist nights, club openings, and underground shows. The kind of coverage that makes people say "I was there."</p>
+        <span class="pillar-tag">Core niche</span>
+      </div>
+      <div class="pillar r" style="transition-delay:.15s">
+        <span class="pillar-icon">🍔</span>
+        <div class="pillar-type">Food Reviews</div>
+        <p class="pillar-desc">Honest, first-person restaurant reviews that move the needle. When I post a spot, the line gets longer. Halal, local-owned, hidden gems — that's my lane.</p>
+        <span class="pillar-tag">Core niche</span>
+      </div>
+      <div class="pillar r" style="transition-delay:.2s">
+        <span class="pillar-icon">🏈</span>
+        <div class="pillar-type">Sports Culture</div>
+        <p class="pillar-desc">Seahawks, Mariners, Sounders — game day vlogs, tailgates, and championship energy from inside the crowd. Real fan content, not press box coverage.</p>
+        <span class="pillar-tag">Core niche</span>
+      </div>
+      <div class="pillar r" style="transition-delay:.25s">
+        <span class="pillar-icon">👟</span>
+        <div class="pillar-type">Lifestyle & Apparel</div>
+        <p class="pillar-desc">How Seattle dresses, moves, and expresses itself. Streetwear, local brands, and the aesthetic that ties the city together — organic, not forced.</p>
+        <span class="pillar-tag">Core niche</span>
+      </div>
+      <div class="pillar r" style="transition-delay:.3s">
+        <span class="pillar-icon">✉️</span>
+        <div class="pillar-type">Events Newsletter</div>
+        <p class="pillar-desc">3,200+ subscribers opted in for weekly Seattle event picks. One of the most direct lines to the audience — people who are actively looking for things to do.</p>
+        <span class="pillar-tag">High intent</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- AUDIENCE -->
+<section id="audience">
+  <div class="inner">
+    <div class="r">
+      <div class="eyebrow">The Audience</div>
+      <h2 class="sec-title">WHO'S WATCHING</h2>
+    </div>
+    <div class="aud-grid">
+      <div class="bar-section r">
+        <h3>Age breakdown</h3>
+        <div class="bar-row">
+          <span class="bar-label">18–24</span>
+          <div class="bar-track"><div class="bar-fill" style="width:38%"></div></div>
+          <span class="bar-pct">38%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">25–34</span>
+          <div class="bar-track"><div class="bar-fill" style="width:42%"></div></div>
+          <span class="bar-pct">42%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">35–44</span>
+          <div class="bar-track"><div class="bar-fill" style="width:14%"></div></div>
+          <span class="bar-pct">14%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">45+</span>
+          <div class="bar-track"><div class="bar-fill" style="width:6%"></div></div>
+          <span class="bar-pct">6%</span>
+        </div>
+        <h3 style="margin-top:2rem">Engagement rates</h3>
+        <div class="bar-row">
+          <span class="bar-label">TikTok</span>
+          <div class="bar-track"><div class="bar-fill" style="width:72%"></div></div>
+          <span class="bar-pct">7.2%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">YouTube</span>
+          <div class="bar-track"><div class="bar-fill" style="width:62%"></div></div>
+          <span class="bar-pct">6.2%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Instagram</span>
+          <div class="bar-track"><div class="bar-fill" style="width:54%"></div></div>
+          <span class="bar-pct">5.4%</span>
+        </div>
+      </div>
+      <div class="r" style="transition-delay:.15s">
+        <h3 class="bar-section" style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.08em;color:rgba(244,240,232,.35);margin-bottom:1.2rem">Geographic breakdown</h3>
+        <div class="geo-grid">
+          <div class="geo">
+            <div class="geo-city">SEATTLE</div>
+            <div class="geo-pct">Primary · 54%</div>
+          </div>
+          <div class="geo">
+            <div class="geo-city">TACOMA</div>
+            <div class="geo-pct">Regional · 12%</div>
+          </div>
+          <div class="geo">
+            <div class="geo-city">BELLEVUE</div>
+            <div class="geo-pct">Eastside · 8%</div>
+          </div>
+          <div class="geo">
+            <div class="geo-city">REST OF PNW</div>
+            <div class="geo-pct">Regional · 15%</div>
+          </div>
+          <div class="geo geo-wide">
+            <div class="geo-city">NATIONAL + DIASPORA</div>
+            <div class="geo-pct">Seattle expats, NFL fans, travel-curious · 11%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WORK TOGETHER -->
+<section id="work" style="background:rgba(244,240,232,.02)">
+  <div class="inner">
+    <div class="r">
+      <div class="eyebrow">Let's Build</div>
+      <h2 class="sec-title">PARTNERSHIP FORMATS</h2>
+      <p style="font-size:.76rem;line-height:1.8;color:rgba(244,240,232,.45);max-width:520px;margin-bottom:0">
+        I only work with brands that make sense for my audience — places they'd actually go, things they'd actually buy. Every integration sounds like me, not a press release.
+      </p>
+    </div>
+    <div class="work-grid r" style="transition-delay:.1s">
+      <div class="work-card">
+        <div class="work-num">01</div>
+        <div class="work-name">Venue / Event Feature</div>
+        <p class="work-desc">I come to your event, show, or venue and create authentic vlog coverage distributed across TikTok + YouTube. Best for: venues, promoters, ticketing platforms.</p>
+      </div>
+      <div class="work-card">
+        <div class="work-num">02</div>
+        <div class="work-name">Restaurant Review</div>
+        <p class="work-desc">First-person food review in my natural style — no scripts. I eat there, I film it, I post it. Strong track record of driving foot traffic. Best for: local F&B.</p>
+      </div>
+      <div class="work-card">
+        <div class="work-num">03</div>
+        <div class="work-name">Newsletter Placement</div>
+        <p class="work-desc">Dedicated or integrated spot in my weekly events newsletter reaching 3,200+ active Seattle locals who are planning their weekend. Best for: events, drops, openings.</p>
+      </div>
+      <div class="work-card">
+        <div class="work-num">04</div>
+        <div class="work-name">Custom Campaign</div>
+        <p class="work-desc">Multi-platform activation combining video, newsletter, and social. Ideal for grand openings, seasonal moments, and brands wanting sustained presence. Let's talk.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FEATURED -->
+<section>
+  <div class="inner">
+    <div class="r">
+      <div class="eyebrow">Recent Work</div>
+      <h2 class="sec-title">FEATURED CONTENT</h2>
+    </div>
+    <div class="feat-grid">
+      <a class="feat-card r" href="#" style="transition-delay:.05s">
+        <div class="feat-thumb">🍔</div>
+        <div>
+          <div class="feat-title">Best Seattle Burger?! Halal Smash BRGR — Honest Review</div>
+          <div class="feat-meta">TikTok · <span class="feat-views">2.1M views</span></div>
+        </div>
+      </a>
+      <a class="feat-card r" href="#" style="transition-delay:.1s">
+        <div class="feat-thumb">🏆</div>
+        <div>
+          <div class="feat-title">Inside Seattle's Epic Seahawks World Champions Celebration</div>
+          <div class="feat-meta">YouTube · <span class="feat-views">148K views</span></div>
+        </div>
+      </a>
+      <a class="feat-card r" href="#" style="transition-delay:.15s">
+        <div class="feat-thumb">🏟️</div>
+        <div>
+          <div class="feat-title">Come With Me to Watch the Super Bowl in Seattle</div>
+          <div class="feat-meta">TikTok · <span class="feat-views">890K views</span></div>
+        </div>
+      </a>
+      <a class="feat-card r" href="#" style="transition-delay:.2s">
+        <div class="feat-thumb">🎥</div>
+        <div>
+          <div class="feat-title">Seahawks vs Rams NFC Championship — Tailgate, Lumen & After Party Vlog</div>
+          <div class="feat-meta">YouTube · <span class="feat-views">76K views</span></div>
+        </div>
+      </a>
+      <a class="feat-card r" href="#" style="transition-delay:.25s">
+        <div class="feat-thumb">🍔</div>
+        <div>
+          <div class="feat-title">Best Seattle Burger? Chubby's — Full Review</div>
+          <div class="feat-meta">TikTok · <span class="feat-views">430K views</span></div>
+        </div>
+      </a>
+      <a class="feat-card r" href="#" style="transition-delay:.3s">
+        <div class="feat-thumb">🎵</div>
+        <div>
+          <div class="feat-title">Seattle Music Scene 2025 — Shows You Missed This Month</div>
+          <div class="feat-meta">Newsletter · <span class="feat-views">62% open rate</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section style="border-top:1px solid rgba(244,240,232,.08)">
+  <div class="contact-inner r">
+    <div class="eyebrow" style="justify-content:center">
+      <span style="display:block;width:24px;height:1px;background:var(--red)"></span>
+      Get In Touch
+    </div>
+    <div class="contact-title">
+      LET'S<br/>
+      <em>work together.</em>
+    </div>
+    <p class="contact-sub">
+      If your brand belongs in Seattle's conversation — food, music, events, sports, or lifestyle — I want to hear from you. Rates, availability, and custom packages on request.
+    </p>
+    <a class="email-link" href="mailto:kelati@truecounterfeit.com">KELATI@TRUECOUNTERFEIT.COM</a>
+    <div class="socials">
+      <a class="soc" href="#">TikTok</a>
+      <a class="soc" href="#">YouTube</a>
+      <a class="soc" href="#">Instagram</a>
+      <a class="soc" href="#">Newsletter</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-name"><em>K</em>ELATI · TRUECOUNTERFEIT</div>
+  <div class="foot-copy">© 2025 · Seattle, WA · Media Kit</div>
+</footer>
+
+<script>
+const els = document.querySelectorAll('.r');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); } });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+els.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
