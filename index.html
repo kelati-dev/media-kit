@@ -36,7 +36,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1rem 2rem;display:fl
 
 /* HERO */
 .hero{min-height:100vh;padding:7rem 2rem 4rem;display:grid;grid-template-columns:1fr 420px;gap:3rem;align-items:center;position:relative;overflow:hidden}
-.hero-ghost{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',sans-serif;font-size:clamp(140px,24vw,360px);color:rgba(244,240,232,.018);white-space:nowrap;pointer-events:none;user-select:none;letter-spacing:-.03em}
+.hero::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.5);z-index:1;pointer-events:none}.hero-ghost{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',sans-serif;font-size:clamp(140px,24vw,360px);color:rgba(244,240,232,.018);white-space:nowrap;pointer-events:none;user-select:none;letter-spacing:-.03em}
 .hero-left{position:relative;z-index:2}
 .pill{display:inline-flex;align-items:center;gap:.5rem;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;border:1px solid rgba(208,18,43,.5);color:var(--red);padding:.28rem .9rem;margin-bottom:1.6rem;opacity:0;animation:up .5s .1s forwards}
 .pill-dot{width:6px;height:6px;background:var(--red);border-radius:50%;animation:pulse 2s infinite}
